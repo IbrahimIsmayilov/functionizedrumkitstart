@@ -9,58 +9,31 @@ function processKeyDown(e) {
 
   if (e.code === 'KeyA') {
     // Play A-Clap
-    let audio = document.getElementById('clap');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('A').classList.add('playing');
+    play("clap", "A");
   } else if (e.code === 'KeyS') {
     // Play S-hihat
-    let audio = document.getElementById('hihat');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('S').classList.add('playing');
+    play("hihat", "S");
   } else if (e.code === 'KeyD') {
     // Play D-kick
-    let audio = document.getElementById('kick');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('D').classList.add('playing');
+    play("kick", "D");
   } else if (e.code === 'KeyF') {
     // Play F-Openhat
-    let audio = document.getElementById('openhat');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('F').classList.add('playing');
+    play("openhat", "F");
   } else if (e.code === 'KeyG') {
     // Play G-Boom
-    let audio = document.getElementById('boom');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('G').classList.add('playing');
+    play("boom", "G");
   } else if (e.code === 'KeyH') {
     // Play H-Ride
-    let audio = document.getElementById('ride');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('H').classList.add('playing');
+    play("ride", "H");
   } else if (e.code === 'KeyJ') {
     // Play J-Snare
-    let audio = document.getElementById('snare');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('J').classList.add('playing');
+    play("snare", "J");
   } else if (e.code === 'KeyK') {
     // Play K-Tom
-    let audio = document.getElementById('tom');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('K').classList.add('playing');
+    play("tom", "K");
   } else if (e.code === 'KeyL') {
     // Play L-Tink
-    let audio = document.getElementById('tink');
-    audio.currentTime = 0;
-    audio.play();
-    document.getElementById('L').classList.add('playing');
+    play("tink", "L");
   }
 }
 
@@ -78,4 +51,11 @@ document.getElementById('L').addEventListener('transitionend', removePlaying);
 // Transition End Function
 function removePlaying(event) {
   event.target.classList.remove('playing');
+}
+
+function play(element, letter) {
+  let audio = document.getElementById(`${element}`);
+  audio.currentTime = 0;
+  audio.play();
+  document.getElementById(`${letter}`).classList.add('playing');
 }
